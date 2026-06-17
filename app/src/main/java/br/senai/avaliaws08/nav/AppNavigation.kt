@@ -11,7 +11,8 @@ fun AppNavigation(){
     NavHost(
         navController = navController,
         startDestination = "home"
-    ){
+    )
+    {
         composable("home"){
 
         }
