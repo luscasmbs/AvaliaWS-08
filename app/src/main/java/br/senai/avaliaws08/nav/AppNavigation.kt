@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.senai.avaliaws08.ui.screens.TelaCadastro
 import br.senai.avaliaws08.ui.screens.TelaInicial
 
 @Composable
@@ -15,7 +16,10 @@ fun AppNavigation(){
     )
     {
         composable("home"){
-            TelaInicial()
+            TelaInicial(navController = navController)  // ← Passe o navController
+        }
+        composable("cadastro"){
+            TelaCadastro(navController = navController)  // ← Passe o navController
         }
     }
 }

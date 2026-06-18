@@ -20,11 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import br.senai.avaliaws08.ui.theme.Blue40
 import br.senai.avaliaws08.ui.theme.Gray20
 
 @Composable
-fun NavigationBar(){
+fun NavigationBar(navController: NavController){
     val selectButton = remember { mutableStateOf(0) }
     BottomAppBar(
         modifier = Modifier.height(80.dp),
@@ -39,6 +41,7 @@ fun NavigationBar(){
                 IconButton(
                     onClick ={
                         selectButton.value = 0
+                        navController.navigate("home")
                     },
 
                 ) {
@@ -103,5 +106,5 @@ fun NavigationBar(){
 @Preview
 @Composable
 private fun NavigationBarPreview(){
-    NavigationBar()
+    NavigationBar(navController = rememberNavController())
 }

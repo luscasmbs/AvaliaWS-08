@@ -9,14 +9,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import br.senai.avaliaws08.ui.components.NavigationBar
+import br.senai.avaliaws08.ui.components.TelaInicial.FloatingButton
 import br.senai.avaliaws08.ui.components.TelaInicial.GeneralSituation
 import br.senai.avaliaws08.ui.components.TelaInicial.SumaryCards
 import br.senai.avaliaws08.ui.components.TelaInicial.Tittle
 import br.senai.avaliaws08.ui.theme.Gray40
 
 @Composable
-fun TelaInicial(){
+fun TelaInicial(navController: NavController){
     Column(
         Modifier.fillMaxSize().background(Gray40)
     ) {
@@ -27,12 +30,14 @@ fun TelaInicial(){
         Spacer(modifier = Modifier.height(30.dp))
         GeneralSituation()
         Spacer(modifier = Modifier.weight(1f))
-        NavigationBar()
+        FloatingButton(navController = navController)
+        Spacer(modifier = Modifier.height(30.dp))
+        NavigationBar(navController = navController)
     }
 }
 
 @Preview
 @Composable
 private fun TelaInicialPreview(){
-    TelaInicial()
+    TelaInicial(navController = rememberNavController())
 }

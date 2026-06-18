@@ -24,11 +24,11 @@ import br.senai.avaliaws08.ui.theme.White
 
 @Composable
 fun ButtonAction(){
-    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth().padding(start = 18.dp).background(Gray40)){
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth().background(Gray40)){
         Button(
             onClick = {},
             shape = RoundedCornerShape(12.dp),
-            modifier = Modifier.fillMaxWidth(0.9f),
+            modifier = Modifier.fillMaxWidth(0.92f),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Blue40,
                 contentColor = White
@@ -38,7 +38,7 @@ fun ButtonAction(){
         }
         OutlinedButton(
             onClick = {},
-            modifier = Modifier.fillMaxWidth(0.9f),
+            modifier = Modifier.fillMaxWidth(.92f),
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.outlinedButtonColors(
                 contentColor = Gray15
