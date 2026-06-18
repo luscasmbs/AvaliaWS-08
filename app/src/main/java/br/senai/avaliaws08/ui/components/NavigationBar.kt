@@ -1,4 +1,4 @@
-package br.senai.avaliaws08.ui.components.TelaInicial
+package br.senai.avaliaws08.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

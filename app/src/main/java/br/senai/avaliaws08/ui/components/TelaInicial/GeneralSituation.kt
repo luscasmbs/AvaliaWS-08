@@ -33,6 +33,12 @@ fun GeneralSituation(){
         modifier = Modifier
             .fillMaxWidth().background(Gray40)
     ) {
+        Text(
+            text = "SITUAÇÃO GERAL",
+            fontSize = 12.sp,
+            fontWeight = FontWeight.ExtraLight,
+            modifier = Modifier.padding(start = 16.dp)
+        )
         Row(
             modifier = Modifier.padding(12.dp),
             horizontalArrangement = Arrangement.spacedBy(24.dp),
@@ -43,82 +49,87 @@ fun GeneralSituation(){
                     .height(80.dp)
                     .width(100.dp)
                     .border(width = 1.dp, color = Blue30, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp))
+                    .background(color = White, shape = RoundedCornerShape(16.dp)),
+                contentAlignment = Alignment.Center
             ) {
-                Text(
-                    modifier = Modifier
-                        .padding(25.dp),
-                    color = Blue30,
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .padding(),
+                        color = Blue30,
 
-                    fontSize = 25.sp,
-                    text = "4",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    modifier = Modifier
-                        .padding(start = 25.dp, top = 60.dp),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.ExtraLight,
-                    text = "Aprovados"
-                )
-            }
+                        fontSize = 25.sp,
+                        text = "4",
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        modifier = Modifier
+                            .padding(),
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.ExtraLight,
+                        text = "Aprovados"
+                    )
+                }
+
+            }//Caixa 1
             Box(
                 modifier = Modifier
                     .height(80.dp)
                     .width(120.dp)
                     .border(width = 1.dp, color = Red30, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp))
+                    .background(color = White, shape = RoundedCornerShape(16.dp)),
+                contentAlignment = Alignment.Center
             ) {
                 Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(12.dp),
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
                 ) {
+                    Text(
+                        color = Red30,
 
+                        fontSize = 25.sp,
+                        text = "4",
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.ExtraLight,
+                        text = "Reprovados"
+                    )
                 }
-                Text(
-                    modifier = Modifier
-                        .padding(25.dp),
-                    color = Red30,
 
-                    fontSize = 25.sp,
-                    text = "4",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    modifier = Modifier
-                        .padding(start = 25.dp, top = 60.dp),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.ExtraLight,
-                    text = "Reprovados"
-                )
-            }
+            }//Caixa 2
             Box(
                 modifier = Modifier
                     .height(80.dp)
                     .width(100.dp)
                     .border(width = 1.dp, color = Yellow30, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp))
+                    .background(color = White, shape = RoundedCornerShape(16.dp)),
+                contentAlignment = Alignment.Center
             ) {
-                Text(
-                    modifier = Modifier
-                        .padding(25.dp),
-                    color = Yellow30,
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Text(
 
-                    fontSize = 25.sp,
-                    text = "4",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    modifier = Modifier
-                        .padding(start = 25.dp, top = 60.dp),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.ExtraLight,
-                    text = "Pendentes"
-                )
-            }
+                        color = Yellow30,
+
+                        fontSize = 25.sp,
+                        text = "4",
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.ExtraLight,
+                        text = "Pendentes"
+                    )
+                }
+            }//Caixa 3
 
         }
 
