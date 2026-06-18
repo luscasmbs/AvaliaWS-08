@@ -1,4 +1,4 @@
-package br.senai.avaliaws08.ui.components
+package br.senai.avaliaws08.ui.components.TelaInicial
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,8 +21,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.avaliaws08.ui.theme.Blue30
-import br.senai.avaliaws08.ui.theme.Blue50
-import br.senai.avaliaws08.ui.theme.Gray10
 import br.senai.avaliaws08.ui.theme.Gray40
 import br.senai.avaliaws08.ui.theme.Red30
 import br.senai.avaliaws08.ui.theme.White

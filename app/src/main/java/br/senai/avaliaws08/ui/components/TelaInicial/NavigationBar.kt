@@ -1,24 +1,17 @@
-package br.senai.avaliaws08.ui.components
+package br.senai.avaliaws08.ui.components.TelaInicial
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Contrast
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Menu
-import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material.icons.outlined.StarOutline
 import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -29,8 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.senai.avaliaws08.ui.theme.Blue40
 import br.senai.avaliaws08.ui.theme.Gray20
-
-import br.senai.avaliaws08.ui.theme.Gray30
 
 @Composable
 fun NavigationBar(){
