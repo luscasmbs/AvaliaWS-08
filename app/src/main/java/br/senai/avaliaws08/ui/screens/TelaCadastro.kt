@@ -27,7 +27,7 @@ fun TelaCadastro(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize().background(Gray40)
     ){
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(30.dp))
         Header(navController = navController)
         Forms(
             competidor = CompetidorData(1,"Bobo","SANTO","PE"),
