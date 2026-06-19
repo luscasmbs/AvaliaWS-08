@@ -5,4 +5,8 @@ data class CompetidorData(
     val Nome: String,
     val Unidade: String,
     val Estado: String
-)
+){
+    init {
+        require()
+    }
+}

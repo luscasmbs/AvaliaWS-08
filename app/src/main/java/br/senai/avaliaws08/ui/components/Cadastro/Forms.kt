@@ -30,12 +30,14 @@ fun Forms(
     onEstado: (String) -> Unit
 ){
     Column(
-        modifier = Modifier.fillMaxWidth().background(Gray40).padding(start = 18.dp)
+        modifier = Modifier.fillMaxWidth().background(Gray40).padding(horizontal = 18.dp)
     ) {
         Input(
             value = competidor.id.toString(),
             label = "Identificador",
-            onValueChange = { onId(it.toIntOrNull() ?: 0)}
+            onValueChange = { newValue ->
+                newValue.toIntOrNull()?.let { onId(it) }
+            }
         )
         Spacer(modifier = Modifier.height(13.dp))
         Input(
