@@ -14,8 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.senai.avaliaws08.model.CompetidorData
-import br.senai.avaliaws08.ui.theme.Blue30
+import br.senai.avaliaws08.model.Competidor
 import br.senai.avaliaws08.ui.theme.Blue40
 import br.senai.avaliaws08.ui.theme.Gray15
 import br.senai.avaliaws08.ui.theme.Gray20
@@ -23,7 +22,7 @@ import br.senai.avaliaws08.ui.theme.Gray40
 
 @Composable
 fun Forms(
-    competidor:  CompetidorData,
+    competidor:  Competidor,
     onId: (Int) -> Unit,
     onNome: (String) -> Unit,
     onUnidade: (String) -> Unit,
@@ -87,7 +86,7 @@ private fun Input(
 @Composable
 private fun FormsPreview(){
     Forms(
-        competidor = CompetidorData(1,"Bobo","SANTO","PE"),
+        competidor = Competidor(1,"Bobo","SANTO","PE"),
         onId = {},
         onNome = {},
         onUnidade = {},
