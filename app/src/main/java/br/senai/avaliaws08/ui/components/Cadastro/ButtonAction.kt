@@ -23,12 +23,17 @@ import br.senai.avaliaws08.ui.theme.Gray40
 import br.senai.avaliaws08.ui.theme.White
 
 @Composable
-fun ButtonAction(){
-    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth().background(Gray40)){
+fun ButtonAction(
+    onCadastrar: () -> Unit,
+    onCancelar: () -> Unit
+){
+
+
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth().background(Gray40).padding(horizontal = 18.dp)){
         Button(
-            onClick = {},
+            onClick = onCadastrar,
             shape = RoundedCornerShape(12.dp),
-            modifier = Modifier.fillMaxWidth(0.92f),
+            modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Blue40,
                 contentColor = White
@@ -37,8 +42,8 @@ fun ButtonAction(){
             Text("Cadastrar competidor")
         }
         OutlinedButton(
-            onClick = {},
-            modifier = Modifier.fillMaxWidth(.92f),
+            onClick = onCancelar,
+            modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.outlinedButtonColors(
                 contentColor = Gray15
@@ -50,8 +55,11 @@ fun ButtonAction(){
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-private fun ButtonActionPreview(){
-    ButtonAction()
+private fun ButtonActionPreview() {
+    ButtonAction(
+        onCadastrar = {},
+        onCancelar = {}
+    )
 }

@@ -19,11 +19,15 @@ import br.senai.avaliaws08.ui.theme.Blue40
 import br.senai.avaliaws08.ui.theme.Gray15
 import br.senai.avaliaws08.ui.theme.Gray20
 import br.senai.avaliaws08.ui.theme.Gray40
+import br.senai.avaliaws08.ui.theme.Gray50
 
 @Composable
 fun Forms(
-    competidor:  Competidor,
-    onId: (Int) -> Unit,
+    id: String,
+    nome: String,
+    unidade: String,
+    estado: String,
+    onId: (String) -> Unit,
     onNome: (String) -> Unit,
     onUnidade: (String) -> Unit,
     onEstado: (String) -> Unit
@@ -32,27 +36,25 @@ fun Forms(
         modifier = Modifier.fillMaxWidth().background(Gray40).padding(horizontal = 18.dp)
     ) {
         Input(
-            value = competidor.id.toString(),
+            value = id,
             label = "Identificador",
-            onValueChange = { newValue ->
-                newValue.toIntOrNull()?.let { onId(it) }
-            }
+            onValueChange = onId
         )
         Spacer(modifier = Modifier.height(13.dp))
         Input(
-            value = competidor.Nome,
+            value = nome,
             label = "Nome completo",
             onValueChange = onNome
         )
         Spacer(modifier = Modifier.height(13.dp))
         Input(
-            value = competidor.Unidade,
+            value = unidade,
             label = "Unidade ou Escola",
             onValueChange = onUnidade
         )
         Spacer(modifier = Modifier.height(13.dp))
         Input(
-            value = competidor.Estado,
+            value = estado,
             label = "Estado ou região",
             onValueChange = onEstado
         )
@@ -70,15 +72,17 @@ private fun Input(
         shape = RoundedCornerShape(16.dp),
         singleLine = true,
         onValueChange = onValueChange,
-        modifier = Modifier.fillMaxWidth(0.95f),
+        modifier = Modifier.fillMaxWidth(1f),
         label = {
-            Text(text = label, color = Gray20)
+            Text(text = label)
         },
         colors = OutlinedTextFieldDefaults.colors(
             unfocusedBorderColor = Gray15,
             focusedBorderColor = Blue40,
-            unfocusedLabelColor = Gray15,
-            focusedLabelColor = Blue40
+            unfocusedLabelColor = Gray50,
+            focusedLabelColor = Blue40,
+
+
         )
     )
 }
@@ -86,7 +90,10 @@ private fun Input(
 @Composable
 private fun FormsPreview(){
     Forms(
-        competidor = Competidor(1,"Bobo","SANTO","PE"),
+        id = "001",
+        nome = "Lucas Silva",
+        unidade = "SENAI",
+        estado = "Pernambuco",
         onId = {},
         onNome = {},
         onUnidade = {},

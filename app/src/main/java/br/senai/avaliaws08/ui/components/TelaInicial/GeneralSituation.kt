@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,93 +45,63 @@ fun GeneralSituation(){
             horizontalArrangement = Arrangement.spacedBy(24.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Box(
+            SituationCard(
+                number = "3",
+                label = "Aprovados",
+                modifier = Modifier.height(80.dp).width(100.dp),
+                color = Blue30
+            )//Caixa 1
+            SituationCard(
+                number = "4",
+                label = "Reprovados",
+                modifier = Modifier.height(80.dp).width(120.dp),
+                color = Red30
+            ) //Caixa 2
+        SituationCard(
+            number = "4",
+            label = "Pendentes",
+            modifier = Modifier.height(80.dp).width(100.dp),
+            color = Yellow30
+            ) //Caixa 3
+
+        }
+
+    }
+}
+
+@Composable
+private fun SituationCard(
+    number: String,
+    label: String,
+    modifier: Modifier = Modifier,
+    color: Color
+){
+    Box(
+        modifier = modifier
+            .border(width = 1.dp, color = color, shape = RoundedCornerShape(16.dp))
+            .background(color = White, shape = RoundedCornerShape(16.dp)),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text(
                 modifier = Modifier
-                    .height(80.dp)
-                    .width(100.dp)
-                    .border(width = 1.dp, color = Blue30, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        modifier = Modifier
-                            .padding(),
-                        color = Blue30,
+                    .padding(),
+                color = color,
 
-                        fontSize = 25.sp,
-                        text = "4",
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        modifier = Modifier
-                            .padding(),
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.ExtraLight,
-                        text = "Aprovados"
-                    )
-                }
-
-            }//Caixa 1
-            Box(
+                fontSize = 25.sp,
+                text = number,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
                 modifier = Modifier
-                    .height(80.dp)
-                    .width(120.dp)
-                    .border(width = 1.dp, color = Red30, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        color = Red30,
-
-                        fontSize = 25.sp,
-                        text = "4",
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.ExtraLight,
-                        text = "Reprovados"
-                    )
-                }
-
-            }//Caixa 2
-            Box(
-                modifier = Modifier
-                    .height(80.dp)
-                    .width(100.dp)
-                    .border(width = 1.dp, color = Yellow30, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ){
-                    Text(
-
-                        color = Yellow30,
-
-                        fontSize = 25.sp,
-                        text = "4",
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.ExtraLight,
-                        text = "Pendentes"
-                    )
-                }
-            }//Caixa 3
-
+                    .padding(),
+                fontSize = 13.sp,
+                fontWeight = FontWeight.ExtraLight,
+                text = label
+            )
         }
 
     }

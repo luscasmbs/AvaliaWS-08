@@ -28,88 +28,67 @@ import br.senai.avaliaws08.ui.theme.White
 fun SumaryCards(){
     Column(
         modifier = Modifier
-            .fillMaxWidth().background(Gray40)
+            .fillMaxWidth()
+            .background(Gray40)
+            .padding(12.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        Row( modifier = Modifier.padding(12.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalAlignment = Alignment.CenterVertically
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Box(
+            SummaryCard(
+                number = "4",
+                label = "Competidores",
                 modifier = Modifier
+                    .weight(1f)
                     .height(100.dp)
-                    .width(180.dp)
-                    .border(width = 1.dp, color = Gray10, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp))
-            ){
-                Text(
-                    modifier = Modifier
-                        .padding(25.dp),
-                    color = Blue50,
-
-                    fontSize = 25.sp,
-                    text = "4",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    modifier = Modifier
-                        .padding(start = 25.dp, top = 60.dp),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.ExtraLight,
-                    text = "Competidores"
-                )
-            }
-            Box(
+            )
+            SummaryCard(
+                number = "4",
+                label = "Entregas registradas",
                 modifier = Modifier
+                    .weight(1f)
                     .height(100.dp)
-                    .width(180.dp)
-                    .border(width = 1.dp, color = Gray10, shape = RoundedCornerShape(16.dp))
-                    .background(color = White, shape = RoundedCornerShape(16.dp))
-            ){
-                Text(
-                    modifier = Modifier
-                        .padding(25.dp),
-                    color = Blue50,
-
-                    fontSize = 25.sp,
-                    text = "4",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    modifier = Modifier
-                        .padding(start = 25.dp, top = 60.dp),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.ExtraLight,
-                    text = "Entregas registradas"
-                )
-            }
-
+            )
         }
-        Box(
-            modifier = Modifier
-                .padding(start = 12.dp)
-                .height(100.dp)
-                .width(372.dp)
-                .border(width = 1.dp, color = Gray10, shape = RoundedCornerShape(16.dp))
-                .background(color = White, shape = RoundedCornerShape(16.dp))
-        ){
-            Text(
-                modifier = Modifier
-                    .padding(25.dp),
-                color = Blue50,
 
+        SummaryCard(
+            number = "3",
+            label = "Avaliados pelo motor de regras",
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+        )
+    }
+}
+
+@Composable
+private fun SummaryCard(
+    number: String,
+    label: String,
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier
+            .border(width = 1.dp, color = Gray10, shape = RoundedCornerShape(16.dp))
+            .background(color = White, shape = RoundedCornerShape(16.dp))
+            .padding(16.dp)
+    ) {
+        Column {
+            Text(
+                color = Blue50,
                 fontSize = 25.sp,
-                text = "3",
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                text = number
             )
             Text(
-                modifier = Modifier
-                    .padding(start = 25.dp, top = 60.dp),
+                modifier = Modifier.padding(top = 12.dp),
                 fontSize = 13.sp,
                 fontWeight = FontWeight.ExtraLight,
-                text = "Avaliados pelo motor de regras"
+                text = label
             )
         }
-
     }
 }
 
