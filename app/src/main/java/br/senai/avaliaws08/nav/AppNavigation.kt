@@ -10,37 +10,71 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.senai.avaliaws08.ui.components.NavigationBar
+import br.senai.avaliaws08.ui.screens.TelaAvaliacao
 import br.senai.avaliaws08.ui.screens.TelaCadastro
 import br.senai.avaliaws08.ui.screens.TelaCompetidores
 import br.senai.avaliaws08.ui.screens.TelaInicial
 
 @Composable
 fun AppNavigation() {
+
     val navController = rememberNavController()
-    val selectButton = rememberSaveable { mutableStateOf(0) }
+
+    val selectButton = rememberSaveable {
+        mutableStateOf(0)
+    }
 
     Scaffold(
+
         bottomBar = {
             NavigationBar(
                 navController = navController,
                 selectButton = selectButton.value,
-                onSelectButton = { selectButton.value = it }
+                onSelectButton = {
+                    selectButton.value = it
+                }
             )
         }
+
     ) { paddingValues ->
+
         NavHost(
             navController = navController,
             startDestination = "home",
             modifier = Modifier.padding(paddingValues)
         ) {
+
             composable("home") {
-                TelaInicial(navController = navController)
+                TelaInicial(
+                    navController = navController
+                )
             }
+
             composable("cadastro") {
-                TelaCadastro(navController = navController)
+                TelaCadastro(
+                    navController = navController
+                )
             }
+
             composable("competidores") {
-                TelaCompetidores(navController = navController)
+                TelaCompetidores(
+                    navController = navController
+                )
+            }
+
+            composable(
+                route = "avaliacao/{competidorId}"
+            ) { backStackEntry ->
+
+                val competidorId =
+                    backStackEntry.arguments
+                        ?.getString("competidorId")
+                        ?: ""
+
+                TelaAvaliacao(
+                    navController = navController,
+                    competidorId = competidorId
+                )
             }
         }
     }
