@@ -32,7 +32,7 @@ fun TelaInicial(navController: NavController){
         Spacer(modifier = Modifier.weight(1f))
         FloatingButton(navController = navController)
         Spacer(modifier = Modifier.height(30.dp))
-        NavigationBar(navController = navController)
+     
     }
 }
 

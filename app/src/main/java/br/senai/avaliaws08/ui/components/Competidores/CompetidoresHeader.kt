@@ -24,43 +24,63 @@ import br.senai.avaliaws08.ui.theme.Blue40
 import br.senai.avaliaws08.ui.theme.Gray40
 
 @Composable
-fun CompetidoresHeader(navController: NavController){
-    Column(modifier = Modifier.fillMaxWidth().background(Gray40)) {
-        Row( modifier = Modifier.padding(12.dp),
+fun CompetidoresHeader(
+    navController: NavController,
+    quantidade: Int
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Gray40)
+    ) {
+
+        Row(
+            modifier = Modifier.padding(12.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalAlignment = Alignment.CenterVertically){
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
             IconButton(
-                onClick ={
+                onClick = {
                     navController.popBackStack()
                 },
-                modifier = Modifier
-                    .padding(16.dp)
+                modifier = Modifier.padding(16.dp)
             ) {
+
                 Icon(
                     imageVector = Icons.Default.NavigateBefore,
                     contentDescription = "Voltar tela"
                 )
+
             }
+
             Column(
                 verticalArrangement = Arrangement.Center
             ) {
+
                 Text(
                     text = "Competidores",
                     fontSize = 18.sp,
                     color = Blue40
                 )
+
                 Text(
-                    text = "4 cadastrados",
+                    text = "$quantidade cadastrados",
                     fontSize = 11.sp,
-                    fontWeight = FontWeight.ExtraLight,
+                    fontWeight = FontWeight.ExtraLight
                 )
+
             }
+
         }
+
     }
 }
-
-@Preview
+@Preview(showBackground = true)
 @Composable
-private fun CompetidoresHeaderPreview(){
-    CompetidoresHeader(navController = rememberNavController())
+private fun CompetidoresHeaderPreview() {
+    CompetidoresHeader(
+        navController = rememberNavController(),
+        quantidade = 4
+    )
 }

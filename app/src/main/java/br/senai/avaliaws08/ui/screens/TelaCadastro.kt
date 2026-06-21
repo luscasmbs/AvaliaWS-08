@@ -141,9 +141,6 @@ fun TelaCadastro(
 
         Spacer(modifier = Modifier.weight(1f))
 
-        NavigationBar(
-            navController = navController
-        )
     }
 }
 
